@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<!-- saved from url=(0057)file:///C:/Users/DELL%2012/Downloads/study-tracker_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Study Log</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Study Log_files/css2" rel="stylesheet">
 <style>
   :root{
     --ink:#1E3A3A;
@@ -354,30 +354,29 @@
       <p class="eyebrow">Study Log</p>
       <h1>Today's focus</h1>
     </div>
-    <div class="date" id="dateLabel"></div>
+    <div class="date" id="dateLabel">Thu, 11 Jun<br>11:22 am</div>
   </header>
 
   <!-- TIMER -->
   <div class="card timer-card">
-    <h2>Focus timer <span class="tag" id="totalTag">0m / 0m</span></h2>
+    <h2>Focus timer <span class="tag" id="totalTag">0m / 180m</span></h2>
 
     <div class="ring-wrap">
       <svg viewBox="0 0 240 240">
         <circle class="ring-track" cx="120" cy="120" r="106"></circle>
-        <circle class="ring-progress" id="ringProgress" cx="120" cy="120" r="106"
-                stroke-dasharray="666" stroke-dashoffset="666"></circle>
+        <circle class="ring-progress" id="ringProgress" cx="120" cy="120" r="106" stroke-dasharray="666" stroke-dashoffset="666" style="stroke: rgb(92, 122, 160);"></circle>
       </svg>
       <div class="ring-center">
         <div class="ring-time" id="liveTime">00:00:00</div>
-        <div class="ring-sub" id="activeSubjectLabel">Pick a subject to begin</div>
+        <div class="ring-sub" id="activeSubjectLabel">Ready: Python</div>
       </div>
     </div>
 
-    <select class="subject-select" id="subjectSelect"></select>
+    <select class="subject-select" id="subjectSelect"><option value="python">Python</option><option value="sql">SQL</option><option value="ml">Machine Learning</option><option value="aptitude">Aptitude</option></select>
 
     <div class="timer-buttons">
       <button class="btn-primary" id="startStopBtn">Start</button>
-      <button class="btn-secondary" id="resetBtn" disabled>Reset session</button>
+      <button class="btn-secondary" id="resetBtn" disabled="">Reset session</button>
     </div>
   </div>
 
@@ -386,24 +385,76 @@
     <h2>Today's breakdown</h2>
     <div class="total-row">
       <span class="num" id="totalTime">0m</span>
-      <span class="label" id="totalGoalLabel">of 0m goal</span>
+      <span class="label" id="totalGoalLabel">of 180m goal</span>
     </div>
     <div class="stack-bar" id="stackBar"></div>
-    <div id="subjectList"></div>
+    <div id="subjectList"><div class="subject-row">
+        <div class="swatch" style="background:#E8A33D"></div>
+        <div class="subject-name">Python</div>
+        <div class="subject-bar"><div style="width:0%; background:#E8A33D"></div></div>
+        <div class="subject-time">0m / 60m</div>
+      </div><div class="subject-row">
+        <div class="swatch" style="background:#5C7AA0"></div>
+        <div class="subject-name">SQL</div>
+        <div class="subject-bar"><div style="width:0%; background:#5C7AA0"></div></div>
+        <div class="subject-time">0m / 30m</div>
+      </div><div class="subject-row">
+        <div class="swatch" style="background:#7A9471"></div>
+        <div class="subject-name">Machine Learning</div>
+        <div class="subject-bar"><div style="width:0%; background:#7A9471"></div></div>
+        <div class="subject-time">0m / 60m</div>
+      </div><div class="subject-row">
+        <div class="swatch" style="background:#9678A6"></div>
+        <div class="subject-name">Aptitude</div>
+        <div class="subject-bar"><div style="width:0%; background:#9678A6"></div></div>
+        <div class="subject-time">0m / 30m</div>
+      </div></div>
   </div>
 
   <!-- WEEK -->
   <div class="card">
     <h2>This week</h2>
-    <div class="week-grid" id="weekGrid"></div>
+    <div class="week-grid" id="weekGrid"><div class="day"><div class="dlabel">F</div><div class="dot"></div></div><div class="day"><div class="dlabel">S</div><div class="dot"></div></div><div class="day"><div class="dlabel">S</div><div class="dot"></div></div><div class="day"><div class="dlabel">M</div><div class="dot"></div></div><div class="day"><div class="dlabel">T</div><div class="dot"></div></div><div class="day"><div class="dlabel">W</div><div class="dot"></div></div><div class="day"><div class="dlabel">T</div><div class="dot today"></div></div></div>
   </div>
 
   <!-- GOALS -->
   <div class="card">
     <h2>Subjects &amp; daily goals</h2>
-    <div id="goalsList"></div>
+    <div id="goalsList"><div class="goal-row">
+        <div class="swatch" style="background:#E8A33D"></div>
+        <input class="gname" data-idx="0" value="Python" maxlength="24">
+        <div class="goal-input-wrap">
+          <input type="number" min="0" max="600" step="5" data-idx="0" class="goal-input" value="60">
+          <span>min</span>
+        </div>
+        <button class="remove-subject" data-idx="0" title="Remove">×</button>
+      </div><div class="goal-row">
+        <div class="swatch" style="background:#5C7AA0"></div>
+        <input class="gname" data-idx="1" value="SQL" maxlength="24">
+        <div class="goal-input-wrap">
+          <input type="number" min="0" max="600" step="5" data-idx="1" class="goal-input" value="30">
+          <span>min</span>
+        </div>
+        <button class="remove-subject" data-idx="1" title="Remove">×</button>
+      </div><div class="goal-row">
+        <div class="swatch" style="background:#7A9471"></div>
+        <input class="gname" data-idx="2" value="Machine Learning" maxlength="24">
+        <div class="goal-input-wrap">
+          <input type="number" min="0" max="600" step="5" data-idx="2" class="goal-input" value="60">
+          <span>min</span>
+        </div>
+        <button class="remove-subject" data-idx="2" title="Remove">×</button>
+      </div><div class="goal-row">
+        <div class="swatch" style="background:#9678A6"></div>
+        <input class="gname" data-idx="3" value="Aptitude" maxlength="24">
+        <div class="goal-input-wrap">
+          <input type="number" min="0" max="600" step="5" data-idx="3" class="goal-input" value="30">
+          <span>min</span>
+        </div>
+        <button class="remove-subject" data-idx="3" title="Remove">×</button>
+      </div></div>
     <div class="add-subject-row">
-      <input type="text" id="newSubjectName" placeholder="Add a subject…" maxlength="24" />
+      <input type="text" id="newSubjectName" placeholder="Add a subject…" maxlength="24">
       <button class="btn-secondary" id="addSubjectBtn">Add</button>
     </div>
   </div>
@@ -414,20 +465,20 @@
     <div class="reminder-row">
       <p>Get an alert on this device if you haven't logged any study time by your reminder time.</p>
       <label class="switch">
-        <input type="checkbox" id="notifToggle" />
+        <input type="checkbox" id="notifToggle">
         <span class="slider"></span>
       </label>
     </div>
     <div class="time-input-row">
       <label for="reminderTime">Remind me at</label>
-      <input type="time" id="reminderTime" value="20:00" />
+      <input type="time" id="reminderTime" value="20:00">
     </div>
-    <div class="status-line" id="notifStatus"></div>
+    <div class="status-line" id="notifStatus">Reminders are off.</div>
   </div>
 
   <footer>
-    Data is stored only on this device, in this browser.<br/>
-    For the reminder to fire, keep this tab open in the background —<br/>
+    Data is stored only on this device, in this browser.<br>
+    For the reminder to fire, keep this tab open in the background —<br>
     add this page to your home screen so it's one tap away.
   </footer>
 
@@ -780,7 +831,7 @@
   notifToggle.addEventListener('change', async ()=>{
     if(notifToggle.checked){
       if(!('Notification' in window)){
-        notifStatus.textContent = 'This browser doesn\\'t support notifications.';
+        notifStatus.textContent = "This browser doesn't support notifications.";
         notifStatus.className = 'status-line warn';
         notifToggle.checked = false;
         return;
@@ -868,5 +919,6 @@
 })();
 </script>
 
-</body>
-</html>
+
+
+</body></html>
